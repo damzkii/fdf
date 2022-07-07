@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 17:17:50 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/05/15 16:54:30 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/07/07 15:06:44 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,29 @@ typedef struct s_mlx
     void     *win;
 }               t_mlx;
 
+typedef struct s_pixls
+{
+	double	deltax;
+	double	deltay;
+	double	pixely;
+	double	pixelx;
+	int		pixels;
+}				t_pixls;
+
+typedef struct s_map
+{
+	int		rows;
+   	int		cols;
+	int		**map;	
+    
+}				t_map;
+
 typedef struct s_data
 {
     t_mlx   arg;
-    
-}
+    t_map   map;
+    t_pixls pxls;
+	int		i;
+	int		j;
+}				t_data;
 #endif

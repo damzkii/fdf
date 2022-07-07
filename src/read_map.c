@@ -6,7 +6,13 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:38:57 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/05/15 17:38:58 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/07/07 14:10:38 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void    read_map(char *file_name)
+{
+    int     fd;
+
+    get_map(file_name)
+}
