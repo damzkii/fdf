@@ -6,7 +6,7 @@
 #    By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 11:39:50 by ahermawa          #+#    #+#              #
-#    Updated: 2022/05/15 15:13:30 by ahermawa         ###   ########.fr        #
+#    Updated: 2022/08/09 14:29:59 by ahermawa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJ_FOLDER		=	obj
 FOLDER_LIST		=	$(H_FOLDER) $(C_FOLDER) $(OBJ_FOLDER)
 
 H_FILES			=	$(NAME).h
-C_FILES			=	$(NAME).c print1.c print2.c
+C_FILES			=	main.c
 
 H_PATHS			=	$(addprefix $(H_FOLDER)/, $(H_FILES))
 C_PATHS			=	$(addprefix $(C_FOLDER)/, $(C_FILES))

@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 17:17:50 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/07/07 15:06:44 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/08/09 13:28:20 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include "libft/libft.h"
 # include <math.h>
 # include "../minilibx/mlx.h"
+
+# define WIDTH 1980
+# define HEIGHT 1280
 
 typedef struct s_mlx
 {
@@ -50,4 +53,6 @@ typedef struct s_data
 	int		i;
 	int		j;
 }				t_data;
+
+void    init(t_data *data);
 #endif
