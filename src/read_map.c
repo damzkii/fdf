@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:38:57 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/08/23 16:16:54 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/08/23 18:25:26 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,34 @@ static void get_rows(char *filename, t_data *data)
     close(fd);
 }
 
+static void assign_map(t_data data)
+{
+    char    *line;
+    char    **tmp
+    int     fd;
+    int     i;
+    int     j;
+
+    
+}
+
 void    read_map(char *filename, t_data *data)
 {
+    int     i;
+    
     get_cols(filename, data);
     get_rows(filename, data);
-    printf("%d", data->map.cols);
-    printf("%d", data->map.rows);
+    data->map.map = (int **)malloc(sizeof(int *) * (data->map.rows + 1));
+    if (!(data->map.map))
+        err_msg(1, "Errors!");
+    i = -1;
+    while (++i <= data->map.rows)
+    {
+        data->map.map[i] = (int *)malloc(size of(int) *(data->map.cols))
+        if (!(data->map.map[i]))
+            err_msg(1, "Error!");
+    }
+    assign_map(t_data data)
+    // printf("%d", data->map.cols);
+    // printf("%d", data->map.rows);
 }
