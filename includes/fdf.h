@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 17:17:50 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/08/09 13:28:20 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/08/23 15:39:38 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 # define FDF_H
 
 # include <fcntl.h>
-# include "libft/libft.h"
+# include "../libft/includes/libft.h"
 # include <math.h>
-# include "../minilibx/mlx.h"
+//# include "../minilibx/mlx.h"
 
 # define WIDTH 1980
 # define HEIGHT 1280
@@ -54,5 +54,6 @@ typedef struct s_data
 	int		j;
 }				t_data;
 
-void    init(t_data *data);
+void    read_map(char *filename, t_data *data);
+void    err_msg(int error, char *message);
 #endif

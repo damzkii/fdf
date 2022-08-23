@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:39:01 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/08/09 13:26:22 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/08/23 15:14:26 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ void    err_msg(int error, char *message)
     }
 }
 
-void    init(t_data *data)
-{
-    data->gap = 30;
-    data->offset = 50;
-    data->elev = 2;
-    data->clr.color = 0xFFFFFF;
-    data->trigger = 0;
-    data->rotate = 0.1;
-    data->dir = 0;
-    data->flows = 0;
-    data->disco = 0;
-}
+// void    init(t_data *data)
+// {
+//     data->gap = 30;
+//     data->offset = 50;
+//     data->elev = 2;
+//     data->clr.color = 0xFFFFFF;
+//     data->trigger = 0;
+//     data->rotate = 0.1;
+//     data->dir = 0;
+//     data->flows = 0;
+//     data->disco = 0;
+// }
