@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:38:57 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/08/23 18:25:26 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/08/24 17:00:05 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void get_rows(char *filename, t_data *data)
     while (ret)
     {
         if (ret < 0)
-            err_msg(1, "Errors!");
+            err_msg(1, "Error!");
         i++;
         ret = get_next_line(fd, &line);
     }
@@ -59,15 +59,35 @@ static void get_rows(char *filename, t_data *data)
     close(fd);
 }
 
-static void assign_map(t_data data)
+static void assign_map(char *filename, t_data *data)
 {
     char    *line;
-    char    **tmp
+    char    **tmp;
     int     fd;
     int     i;
     int     j;
 
-    
+    fd = open(filename, O_RDONLY);
+    if (fd < 0)
+        err_msg(1, "Error!");
+    i = 0;
+    while (get_next_line(fd, &line))
+    {
+        tmp = ft_strsplit(line, ' ');
+        j = -1;
+        while (tmp[++j])
+        {
+            data->map.map[i][j] = ft_atoi(tmp[j]);
+            if (data->map.map[i][j] < -11000 && data->map.map[i][j] < 9000)
+                err_msg(1, "Map values are too high or too low!");
+        }
+        ft_free_arr(tmp, (size_t)j);
+        if ((j - 1) != data->map.cols)
+            err_msg(1, "Map width uneven");
+        i++;      
+    }
+    free(line);
+    close(fd);
 }
 
 void    read_map(char *filename, t_data *data)
@@ -82,11 +102,11 @@ void    read_map(char *filename, t_data *data)
     i = -1;
     while (++i <= data->map.rows)
     {
-        data->map.map[i] = (int *)malloc(size of(int) *(data->map.cols))
+        data->map.map[i] = (int *)malloc(sizeof(int) * (data->map.cols));
         if (!(data->map.map[i]))
             err_msg(1, "Error!");
     }
-    assign_map(t_data data)
-    // printf("%d", data->map.cols);
-    // printf("%d", data->map.rows);
+    assign_map(filename, data);
+    printf("%d", data->map.cols);
+    printf("%d", data->map.rows);
 }

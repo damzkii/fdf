@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 17:17:50 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/08/23 15:39:38 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/08/24 15:32:23 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <fcntl.h>
 # include "../libft/includes/libft.h"
 # include <math.h>
+# include <stdlib.h>
 //# include "../minilibx/mlx.h"
 
 # define WIDTH 1980
