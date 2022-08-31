@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 17:17:50 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/08/24 15:32:23 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/08/31 09:23:13 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,5 @@ typedef struct s_data
 
 void    read_map(char *filename, t_data *data);
 void    err_msg(int error, char *message);
+void draw_line(t_data *data, double *px, double *py);
 #endif
