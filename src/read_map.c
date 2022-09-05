@@ -6,12 +6,30 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:38:57 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/08/24 17:00:05 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:42:54 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include <stdio.h>
+
+static int  check_nbr(char **nbr)
+{
+    int i;
+    int j;
+    
+    i = 0;
+    while (nbr[i])
+    {
+        j = 0;
+        if (nbr[i][j] = '-')
+            j++;
+        if (!ft_isdigit(nbr[i][j]))
+            return (0);
+        i++;
+    }
+    return (1);
+}
 
 static void get_cols(char *filename, t_data *data)
 {
@@ -27,6 +45,8 @@ static void get_cols(char *filename, t_data *data)
     if (!(get_next_line(fd, &line)))
         err_msg(1, "Error!");
     tmp = ft_strsplit(line, ' ');
+    if (!check_nbr(tmp))
+        err_msg(1, "Invalid map_file");
     while (tmp[i])
         i++;
     ft_free_arr(tmp, (size_t)i);

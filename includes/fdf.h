@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 17:17:50 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/08/31 09:23:13 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/05 16:34:48 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,22 @@ typedef struct s_map
     
 }				t_map;
 
+typedef struct s_color;
+{
+	int		color;
+}				t_color;
+
 typedef struct s_data
 {
     t_mlx   arg;
     t_map   map;
     t_pixls pxls;
+	t_color clr;
 	int		i;
 	int		j;
 }				t_data;
 
 void    read_map(char *filename, t_data *data);
 void    err_msg(int error, char *message);
-void draw_line(t_data *data, double *px, double *py);
+void 	draw_line(t_data *data, double *px, double *py);
 #endif
