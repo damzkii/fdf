@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 17:17:50 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/07 14:40:58 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/13 13:58:23 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct s_data
 	t_color clr;
 	int		i;
 	int		j;
+	double	pz[2];
 }				t_data;
 
 void    read_map(char *filename, t_data *data);
