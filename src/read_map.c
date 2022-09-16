@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:38:57 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/05 15:42:54 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:12:18 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int  check_nbr(char **nbr)
     while (nbr[i])
     {
         j = 0;
-        if (nbr[i][j] = '-')
+        if (nbr[i][j] == '-')
             j++;
         if (!ft_isdigit(nbr[i][j]))
             return (0);
@@ -102,8 +102,8 @@ static void assign_map(char *filename, t_data *data)
                 err_msg(1, "Map values are too high or too low!");
         }
         ft_free_arr(tmp, (size_t)j);
-        if ((j - 1) != data->map.cols)
-            err_msg(1, "Map width uneven");
+       // if ((j - 1) != data->map.cols)
+         //   err_msg(1, "Map width uneven");
         i++;      
     }
     free(line);
@@ -127,6 +127,6 @@ void    read_map(char *filename, t_data *data)
             err_msg(1, "Error!");
     }
     assign_map(filename, data);
-    printf("%d", data->map.cols);
     printf("%d", data->map.rows);
+    printf("%d", data->map.cols);
 }

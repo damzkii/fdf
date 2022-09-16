@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 08:49:08 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/07 14:40:21 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:19:51 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void draw_line(t_data *data, double *px, double *py)
     data->pxls.pixely = py[0];
     while(data->pxls.pixels)
     {
-        mlx_pixel_put(data->arg.mlx, data->arg.win, data->pxls.pixelx,
-            data->pxls.pixely, data->clr.color);
+        mlx_pixel_put(data->arg.mlx, data->arg.win, (WIDTH / 2) + data->dir, data->pxls.pixely + (HEIGHT / 4), data->clr.color);
         data->pxls.pixelx += data->pxls.deltax;
         data->pxls.pixely += data->pxls.deltay;
         --data->pxls.pixels;
