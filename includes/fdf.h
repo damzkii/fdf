@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 17:17:50 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/16 19:20:46 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/19 19:23:19 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ typedef struct s_map
 typedef struct s_color
 {
 	int		color;
+	int		base;
+	int		elevated;
+	int		vertical;
 }				t_color;
 
 typedef struct s_data
@@ -63,11 +66,15 @@ typedef struct s_data
 	int		gap;
 	double	pz[2];
 	int		dir;
+	int		trigger;
+	int		elev;
 }				t_data;
 
+int     rgb_color(double r, double g, double b);
 void    read_map(char *filename, t_data *data);
 void	draw_cols(t_data *data);
 void    err_msg(int error, char *message);
 void 	draw_line(t_data *data, double *px, double *py);
 void	init(t_data *data);
+void    rotate_map(t_data *data, double *px, double *py, double *pz);
 #endif

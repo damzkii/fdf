@@ -6,7 +6,7 @@
 #    By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 11:39:50 by ahermawa          #+#    #+#              #
-#    Updated: 2022/09/16 19:08:10 by ahermawa         ###   ########.fr        #
+#    Updated: 2022/09/17 12:09:15 by ahermawa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ C_PATHS			=	$(addprefix $(C_FOLDER)/, $(C_FILES))
 OBJ_PATHS		=	$(addprefix $(OBJ_FOLDER)/, $(patsubst %.c, %.o, $(C_FILES)))
 
 LINKS			=	-I /usr/local/include -L /usr/local/lib -lmlx -framework OpenGL -framework Appkit
-C_FLAGS			=	-Wall -Wextra -Werror 
+C_FLAGS			=	-Wall -Wextra -Werror -g
 FT_INC			=	-I libft/includes
 FT_LIB			= 	libft/libft.a
 

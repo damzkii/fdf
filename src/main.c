@@ -6,13 +6,13 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 14:27:17 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/16 19:12:57 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/17 17:57:53 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int main(int argc,char **argv)
+int main(int argc, char **argv)
 {
     t_data  data;
     
@@ -21,6 +21,8 @@ int main(int argc,char **argv)
     init(&data);
     read_map(argv[1], &data);
     data.arg.mlx = mlx_init();
+    if (!(data.arg.mlx))
+        err_msg(0, "mallocci virhe mlx");
     data.arg.win = mlx_new_window(data.arg.mlx, WIDTH, HEIGHT, "FDF Project");
     draw_cols(&data);
     mlx_loop(data.arg.mlx);

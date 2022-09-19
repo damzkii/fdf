@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:38:57 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/16 19:12:18 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/19 15:48:06 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,17 @@ static void get_cols(char *filename, t_data *data)
     i = 0;
     fd = open(filename, O_RDONLY);
     if (fd < 0)
-        err_msg(1, "Error!");
+        err_msg(1, "Missing File!");
     if (!(get_next_line(fd, &line)))
-        err_msg(1, "Error!");
+        err_msg(1, "Error");
     tmp = ft_strsplit(line, ' ');
+    ft_free((void *)line, ft_strlen(line));
     if (!check_nbr(tmp))
         err_msg(1, "Invalid map_file");
     while (tmp[i])
         i++;
     ft_free_arr(tmp, (size_t)i);
     data->map.cols = i;
-    free(line);
     close(fd);   
 }
 
@@ -65,13 +65,14 @@ static void get_rows(char *filename, t_data *data)
     i = 0;
     fd = open(filename, O_RDONLY);
     if (fd < 0)
-        err_msg(1, "Error!");
+        err_msg(1, "Error");
     ret = get_next_line(fd, &line);
     while (ret)
     {
         if (ret < 0)
-            err_msg(1, "Error!");
+            err_msg(1, "Error");
         i++;
+        ft_free((void *)line, ft_strlen(line));
         ret = get_next_line(fd, &line);
     }
     data->map.rows = i;
@@ -89,7 +90,7 @@ static void assign_map(char *filename, t_data *data)
 
     fd = open(filename, O_RDONLY);
     if (fd < 0)
-        err_msg(1, "Error!");
+        err_msg(1, "Error");
     i = 0;
     while (get_next_line(fd, &line))
     {
@@ -101,12 +102,14 @@ static void assign_map(char *filename, t_data *data)
             if (data->map.map[i][j] < -11000 && data->map.map[i][j] < 9000)
                 err_msg(1, "Map values are too high or too low!");
         }
+        ft_free((void *)line, ft_strlen(line));
         ft_free_arr(tmp, (size_t)j);
-       // if ((j - 1) != data->map.cols)
-         //   err_msg(1, "Map width uneven");
-        i++;      
+        if (j != data->map.cols)
+           err_msg(1, "Map width uneven");
+        
+        i++;
     }
-    free(line);
+    ft_free((void *)line, ft_strlen(line));
     close(fd);
 }
 
@@ -118,15 +121,13 @@ void    read_map(char *filename, t_data *data)
     get_rows(filename, data);
     data->map.map = (int **)malloc(sizeof(int *) * (data->map.rows + 1));
     if (!(data->map.map))
-        err_msg(1, "Errors!");
+        err_msg(1, "Error");
     i = -1;
-    while (++i <= data->map.rows)
+    while (++i < data->map.rows)
     {
-        data->map.map[i] = (int *)malloc(sizeof(int) * (data->map.cols));
-        if (!(data->map.map[i]))
-            err_msg(1, "Error!");
+        data->map.map[i] = (int *)malloc(sizeof(int) * data->map.cols);
+        if (!data->map.map[i])
+            err_msg(1, "Error");
     }
-    assign_map(filename, data);
-    printf("%d", data->map.rows);
-    printf("%d", data->map.cols);
+   assign_map(filename, data);
 }
