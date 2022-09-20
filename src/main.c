@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 14:27:17 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/17 17:57:53 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/20 18:30:53 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main(int argc, char **argv)
     if (!(data.arg.mlx))
         err_msg(0, "mallocci virhe mlx");
     data.arg.win = mlx_new_window(data.arg.mlx, WIDTH, HEIGHT, "FDF Project");
+    mlx_hook(data.arg.win, 2, 1L << 0, &toggle_button, &data);
     draw_cols(&data);
     mlx_loop(data.arg.mlx);
     //sleep (5);

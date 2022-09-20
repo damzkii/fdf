@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 09:35:26 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/19 19:26:26 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/20 20:40:32 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ void    draw_cols(t_data *data)
             draw_line(data, px, py);
         }
     }
+    command_string(data);
     draw_rows(data);
 }
