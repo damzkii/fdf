@@ -1,0 +1,78 @@
+// void	data_color4(t_data *data, double *px, double *py)
+// {
+// 	if (data->pz[0] > data->pz[1] || data->pz[0] < data->pz[1])
+// 	{
+// 		data->clr.color = data->clr.base;
+// 			if (px[0] < px[1] || py[0] > py[1])
+// 		data->clr.color = data->clr.base;
+// 			else if (px[0] < py[0] || px[1] > py[1])
+// 		data->clr.color = data->clr.base;
+// 	}
+// 	else if (data->pz[0] && data->pz[1])
+// 		data->clr.color = data->clr.elevated;
+// 	else if (px[0] < px[1] || py[0] > py[1])
+// 		data->clr.color = data->clr.vertical;
+// 	else if (px[0] < py[0] || px[1] > py[1])
+// 		data->clr.color = data->clr.vertical;
+// 	else
+// 		data->clr.color = data->clr.base;
+// }
+
+void	data_color3(t_data *data, double *px, double *py)
+{
+	if (data->pz[0] > data->pz[1] || data->pz[0] < data->pz[1])
+	{
+		if (data->toggle == 1)
+			data->clr.color = data->clr.elevated;
+		else if (data->toggle == 2)
+		{
+			data->clr.color = data->clr.base;
+			if (px[0] < px[1] || py[0] > py[1])
+				data->clr.color = data->clr.base;
+			else if (px[0] < py[0] || px[1] > py[1])
+				data->clr.color = data->clr.base;
+		}
+		else if (data->toggle == 0)
+			data->clr.color += data->clr.elevated + data->clr.vertical;
+	}
+	else if (data->pz[0] && data->pz[1])
+		data->clr.color = data->clr.elevated;
+	else if (px[0] < px[1] || py[0] > py[1])
+		data->clr.color = data->clr.vertical;
+	else if (px[0] < py[0] || px[1] > py[1])
+		data->clr.color = data->clr.vertical;
+	else
+		data->clr.color = data->clr.vertical;
+}
+
+void	data_color2(t_data *data)
+{
+		if (data->pz[0] > data->pz[1] || data->pz[0] < data->pz[1])
+		{
+			if (data->toggle == 1)
+				data->clr.color = data->clr.base;
+			else if (data->toggle == 0)
+				data->clr.color += data->clr.elevated + data->clr.vertical;
+		}
+		else
+			data->clr.color = data->clr.base;
+}
+
+#include "fdf.h"
+
+void	pixel_color(t_data *data, double *px, double *py)
+{
+	if (data->trigger == 0)
+	{
+		if (data->pz[0] > 0 || data->pz[1] > 0)
+			data->clr.color = data->clr.elevated;
+		else
+			data->clr.color = data->clr.base;
+	}
+	else if (data->trigger == 2)
+		data_color2(data);
+	else if (data->trigger == 3)
+		data_color3(data, px, py);
+	else if (data->toggle == 2)
+		data_color4(data, px ,py);
+}

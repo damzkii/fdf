@@ -6,7 +6,7 @@
 #    By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 11:39:50 by ahermawa          #+#    #+#              #
-#    Updated: 2022/09/20 12:29:31 by ahermawa         ###   ########.fr        #
+#    Updated: 2022/09/23 18:08:08 by ahermawa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJ_FOLDER		=	obj
 FOLDER_LIST		=	$(H_FOLDER) $(C_FOLDER) $(OBJ_FOLDER)
 
 H_FILES			=	$(NAME).h
-C_FILES			=	main.c read_map.c write_map.c draw_line.c utils.c key_hooks.c
+C_FILES			=	main.c read_map.c write_map.c draw_line.c utils.c key_hooks.c command_string.c colours.c
 
 H_PATHS			=	$(addprefix $(H_FOLDER)/, $(H_FILES))
 C_PATHS			=	$(addprefix $(C_FOLDER)/, $(C_FILES))
