@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:38:57 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/21 16:30:12 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/25 15:15:02 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	get_cols(char *filename, t_data *data)
 		err_msg(1, "Invalid map_file");
 	while (tmp[i])
 		i++;
-	ft_free_arr(tmp, (size_t)i);
+	ft_free_arr((void **)tmp, (size_t)i);
 	data->map.cols = i;
 	close(fd);
 }
@@ -84,27 +84,27 @@ static void	assign_map(char *filename, t_data *data)
 	char	*line;
 	char	**tmp;
 	int		fd;
-	int		i;
 	int		j;
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 		err_msg(1, "Error");
-	i = 0;
+	data->i = 0;
 	while (get_next_line(fd, &line))
 	{
 		tmp = ft_strsplit(line, ' ');
 		j = -1;
 		while (tmp[++j])
 		{
-			data->map.map[i][j] = ft_atoi(tmp[j]);
-			check_err(data, 1, i, j);
+			data->map.map[data->i][j] = ft_atoi(tmp[j]);
+			check_err(data, 1, data->i, j);
 		}
 		ft_free((void *)line, ft_strlen(line));
-		ft_free_arr(tmp, (size_t)j);
-		check_err(data, 2, i, j);
-		i++;
+		ft_free_arr((void **)tmp, (size_t)j);
+		check_err(data, 2, data->i, j);
+		data->i++;
 	}
+	ft_free((void *)line, ft_strlen(line));
 	close(fd);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:28:33 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/24 17:45:49 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/26 14:33:47 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 void	toggle_keys5(int button, t_data *data)
 {
-	if (button == 6)
-		data->triggerc = 1;	
+	if (button == 6 && data->triggerc == 1)
+	{
+		data->triggerc = 0;
+		data->elev = 0;
+	}
 	else if (data->trigger == 0)
 	{
 		if (button == 13)
@@ -47,9 +50,14 @@ void	toggle_keys4(int button, t_data *data)
 		data->gap -= 4;
 	}
 	else if (button == 126)
-		data->elev += 2;
+		data->elev += 4;
 	else if (button == 125)
-		data->elev -= 2;
+		data->elev -= 4;
+	else if (button == 6 && data->triggerc == 0)
+	{
+		data->triggerc = 1;
+		data->elev = 30;
+	}
 	else
 		toggle_keys5(button, data);
 	mlx_clear_window(data->arg.mlx, data->arg.win);

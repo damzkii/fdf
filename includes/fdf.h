@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 17:17:50 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/24 17:50:38 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:54:11 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,18 +72,18 @@ typedef struct s_data
 	double	pz[2];
 }				t_data;
 
-int				rgb_color(double r, double g, double b);
-int				toggle_button(int button, t_data *data);
-void			read_map(char *filename, t_data *data);
-void			draw_cols(t_data *data);
-void			err_msg(int error, char *message);
-void			draw_line(t_data *data, double *px, double *py);
-void			init(t_data *data);
-void			projection_iso(t_data *data, double *px, double *py, double *pz);
-void			projection_cab(t_data *data, double *px, double *py, double *pz);
-void			command_string(t_data *data);
-void			check_err(t_data *data, int check, int i, int j);
-void			data_color2(t_data *data, double *px, double *py);
-void			data_color3(t_data *data, double *px, double *py);
-void			toggle_keys(int button, t_data *data);
+int		rgb_color(double r, double g, double b);
+int		toggle_button(int button, t_data *data);
+void	read_map(char *filename, t_data *data);
+void	draw_cols(t_data *data);
+void	err_msg(int error, char *message);
+void	draw_line(t_data *data, double *px, double *py);
+void	init(t_data *data);
+void	projection_iso(t_data *data, double *px, double *py, double *pz);
+void	projection_cab(t_data *data, double *px, double *py, double *pz);
+void	command_string(t_data *data);
+void	check_err(t_data *data, int check, int i, int j);
+void	data_color2(t_data *data, double *px, double *py);
+void	data_color3(t_data *data, double *px, double *py);
+void	toggle_keys(int button, t_data *data);
 #endif

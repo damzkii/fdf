@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 08:49:08 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/24 18:39:01 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/25 14:02:53 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,17 +81,9 @@ void	projection_cab(t_data *data, double *px, double *py, double *pz)
 {
 	double	*x;
 	double	*y;
-// hypotenuusa = a*a + b*b
+
 	x = px;
 	y = py;
-	double a = px[1] - px[0];
-	double b = py[1] - py[0];
-	double alpha = sqrt(a * a + b * b);
-	px[0] = (x[0] + (pz[0] * data->elev) / 2 * -cos(alpha));
-	py[0] = (y[0] + (pz[0] * data->elev) / 2 * -sin(alpha));
-	px[1] = (x[1] + (pz[1] * data->elev) / 2 * -cos(alpha));
-	py[1] = (y[1] + (pz[1] * data->elev) / 2 * -sin(alpha));
-
-	//projection_iso(data, &px[0], &py[0], &pz[0]);
-	//projection_iso(data, &px[1], &py[1], &pz[1]);
+	*px = *x + (*pz * data->elev) * sin(-1) * 0.5;
+	*py = *y + (*pz * data->elev) * cos(-1) * 0.5;
 }

@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 09:35:26 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/24 17:50:31 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/25 12:23:18 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static void	fill_rows(t_data *data, double *px, double *py)
 	}
 	else if (data->triggerc)
 	{
-		projection_cab(data, px, py, data->pz);
-		//projection_cab(data, &px[1], &py[1], &data->pz[1]);
+		projection_cab(data, &px[0], &py[0], &data->pz[0]);
+		projection_cab(data, &px[1], &py[1], &data->pz[1]);
 	}
 }
 
@@ -64,8 +64,8 @@ static void	fill_cols(t_data *data, double *px, double *py)
 	}
 	else if (data->triggerc)
 	{
-		projection_cab(data, px, py, data->pz);
-		//projection_cab(data, &px[1], &py[1], &data->pz[1]);
+		projection_cab(data, &px[0], &py[0], &data->pz[0]);
+		projection_cab(data, &px[1], &py[1], &data->pz[1]);
 	}
 }
 
