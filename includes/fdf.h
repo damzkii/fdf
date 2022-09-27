@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 17:17:50 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/26 18:54:11 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/27 14:12:44 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include "mlx.h"
 
 # define WIDTH 1980
-# define HEIGHT 1280
+# define HEIGHT 1080
 
 typedef struct s_mlx
 {
