@@ -6,7 +6,7 @@
 #    By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 11:39:50 by ahermawa          #+#    #+#              #
-#    Updated: 2022/09/26 14:22:54 by ahermawa         ###   ########.fr        #
+#    Updated: 2022/10/11 15:36:23 by ahermawa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,14 @@ OBJ_FOLDER		=	obj
 FOLDER_LIST		=	$(H_FOLDER) $(C_FOLDER) $(OBJ_FOLDER)
 
 H_FILES			=	$(NAME).h
-C_FILES			=	main.c read_map.c write_map.c draw_line.c utils.c key_hooks.c command_string.c colours.c
+C_FILES			=	main.c read_map.c write_map.c draw_line.c utils.c key_hooks.c \
+					command_string.c colours.c
 
 H_PATHS			=	$(addprefix $(H_FOLDER)/, $(H_FILES))
 C_PATHS			=	$(addprefix $(C_FOLDER)/, $(C_FILES))
 OBJ_PATHS		=	$(addprefix $(OBJ_FOLDER)/, $(patsubst %.c, %.o, $(C_FILES)))
 
-LINKS			=	-I /usr/local/include -L /usr/local/lib -lmlx -framework OpenGL -framework Appkit
+LINKS			=	-I /includes -L ./ -lmlx -framework OpenGL -framework Appkit
 C_FLAGS			=	-Wall -Wextra -Werror
 FT_INC			=	-I libft/includes
 FT_LIB			= 	libft/libft.a
