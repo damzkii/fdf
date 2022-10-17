@@ -16,4 +16,4 @@ eg. ./fdf 42.fdf
 - mars.fdf  
 - /test_maps (directory full of test maps)  
 ## 42.fdf
-<img width="1000" alt="42" src="https://user-images.githubusercontent.com/82960301/196196835-aa949e4a-7bf2-41c5-9f79-06da0c1ec673.png">
+<img width="1000" alt="bigger42" src="https://user-images.githubusercontent.com/82960301/196228785-85462ba8-2f47-4713-8e5d-6af7f668b57f.png">
