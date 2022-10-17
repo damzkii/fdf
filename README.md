@@ -1,7 +1,7 @@
 # FDF
 ## Summary  
 
-First graphics project for Hive Helsinki. Fdf is a 42 project to learn about 3D programming. The program takes a map as a parameter and creats its 
+First graphics project for Hive Helsinki. Fdf is a 42 project to learn about 3D programming. The program takes a map as a parameter and creates its 
 3D representation.  
 ## Installation  
 1. Git clone https://github.com/damzkii/fdf.git  
