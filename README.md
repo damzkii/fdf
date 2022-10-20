@@ -26,8 +26,8 @@ eg. ./fdf 42.fdf
 - Arrowd down : Delevates 3D
 - Arrow right : Toggles back to 2D
 - Z key : Toggles 2D to 3D cabinet
-- + key : Zoom in
-- - key : Zoom out
+- '+' key : Zoom in
+- -' key : Zoom out
 - T key : Toggle to one solid color 3D iso
 - X key : Toggle to three solid color 3D iso
 - C key : Change color
