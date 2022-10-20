@@ -36,11 +36,12 @@ eg. ./fdf 42.fdf
 - T or left key : Toggles back to solid vertical lines
 - Esc key : exit or simply just X on the left upper corner  
 
-## 42.fdf Isometric
+## Projections
+### 42.fdf Isometric
 <img width="1000" alt="42iso" src="https://user-images.githubusercontent.com/82960301/197000102-b46496ef-e9c4-4670-be0f-467eb592a3c0.png">  
-## pyramide.fdf Isometric
+### pyramide.fdf Isometric
 <img width="1000" alt="pyramide" src="https://user-images.githubusercontent.com/82960301/197000321-4de133e3-22f5-43bf-995b-f5164ac65f45.png">  
-## 42.fdf Cabinet
+### 42.fdf Cabinet
 <img width="1000" alt="42cab" src="https://user-images.githubusercontent.com/82960301/197000406-f42b8a80-ec0a-4ec1-a19f-207d6e48b251.png">  
-## mars.fdf
+### mars.fdf
 <img width="1000" alt="mars" src="https://user-images.githubusercontent.com/82960301/197000543-b3b5f3ac-b973-4873-afda-2a2e380cb5bd.png">
