@@ -3,13 +3,17 @@
 
 First graphics project for Hive Helsinki. Fdf is a 42 project to learn about 3D programming. The program takes a map as a parameter and creates its 
 3D representation.  
-## Installation and run the program  
+## Installation and run the program 
+![gitcopy](https://user-images.githubusercontent.com/82960301/196982426-458bbde6-dc30-42e4-a38e-96b46a5352a1.gif)
 ### Install  
-1. Git clone https://github.com/damzkii/fdf.git  
+1. Git clone https://github.com/damzkii/fdf.git 
+![gitclone](https://user-images.githubusercontent.com/82960301/196982484-4c849d5f-e06a-4755-8595-3b8791eb5316.gif)  
 2. Make all  
+![makeall](https://user-images.githubusercontent.com/82960301/196982542-5cae21fb-d49e-4764-9315-9c1cb2112e5a.gif)  
 ### Run  
 ./fdf "test map here"  
 eg. ./fdf 42.fdf  
+![output](https://user-images.githubusercontent.com/82960301/196982627-07a75077-f732-4e75-b1e4-4078d0175bbf.gif)
 ### Given test maps  
 - 42.fdf  
 - pyramide.fdf  
