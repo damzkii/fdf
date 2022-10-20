@@ -6,7 +6,7 @@ First graphics project for Hive Helsinki. Fdf is a 42 project to learn about 3D 
 ## Installation and run the program 
 ![gitcopy](https://user-images.githubusercontent.com/82960301/196982426-458bbde6-dc30-42e4-a38e-96b46a5352a1.gif)
 ### Install  
-1. Git clone https://github.com/damzkii/fdf.git 
+1. Git clone https://github.com/damzkii/fdf.git  
 ![gitclone](https://user-images.githubusercontent.com/82960301/196982484-4c849d5f-e06a-4755-8595-3b8791eb5316.gif)  
 2. Make all  
 ![makeall](https://user-images.githubusercontent.com/82960301/196982542-5cae21fb-d49e-4764-9315-9c1cb2112e5a.gif)  
