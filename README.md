@@ -19,7 +19,7 @@ eg. ./fdf 42.fdf
 - pyramide.fdf  
 - mars.fdf  
 - /test_maps (directory full of test maps)  
-### Command instructions
+### Button instructions
 - Move map : W A S D
 - Arrow left : Toggle two solid color 3D iso
 - Arrow up : Elevates 3D
@@ -27,12 +27,14 @@ eg. ./fdf 42.fdf
 - Arrow right : Toggles back to 2D
 - Z key : Toggles 2D to 3D cabinet
 - '+' key : Zoom in
-- -' key : Zoom out
+- '-' key : Zoom out
 - T key : Toggle to one solid color 3D iso
 - X key : Toggle to three solid color 3D iso
 - C key : Change color
 - V key : "Shaded" vertical line
 - T or left key : Toggles back to solid vertical lines
+- Esc key : exit or simply just X on the left upper corner  
+**The Button instructions are also shown in the program***
 
 ## 42.fdf
 <img width="1000" alt="bigger42" src="https://user-images.githubusercontent.com/82960301/196228785-85462ba8-2f47-4713-8e5d-6af7f668b57f.png">
